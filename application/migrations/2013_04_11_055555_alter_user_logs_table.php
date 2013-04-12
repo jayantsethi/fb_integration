@@ -1,6 +1,6 @@
 <?php
 
-class Alter_Authentication_Profile_Table {
+class Alter_User_Logs_Table {
 
 	/**
 	 * Make changes to the database.
@@ -9,7 +9,7 @@ class Alter_Authentication_Profile_Table {
 	 */
 	public function up()
 	{
-		Schema::table('user_authentication', function($table)
+		Schema::table('user_logs', function($table)
 			{
 			$table->foreign('user_id')->references('id')->on('users');
 			});
@@ -22,9 +22,9 @@ class Alter_Authentication_Profile_Table {
 	 */
 	public function down()
 	{
-		Schema::table('user_authentication', function($table)
+		Schema::table('user_logs', function($table)
 		{
-			$table->drop_foreign('user_authentication_user_id_foreign');
+			$table->drop_foreign('user_logs_user_id_foreign');
 		});
 	}
 

@@ -1,6 +1,6 @@
 <?php
 
-class Create_Authentication_Profile_Table {
+class Create_User_Logs_Table {
 
 	/**
 	 * Make changes to the database.
@@ -9,12 +9,11 @@ class Create_Authentication_Profile_Table {
 	 */
 	public function up()
 	{
-		Schema::table('user_authentication', function($table)
+		Schema::table('user_logs', function($table)
 			{
 			$table->create();
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
-			$table->string('auth_type');
 			$table->timestamps();
 			});
 	}
@@ -26,7 +25,7 @@ class Create_Authentication_Profile_Table {
 	 */
 	public function down()
 	{
-		Schema::drop('user_authentication');
+		Schema::drop('user_logs');
 	}
 
 }

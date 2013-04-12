@@ -32,10 +32,9 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('home.index');
-});
+Route::any('/','fblogin@home');
+
+Route::controller('fblogin');
 
 /*
 |--------------------------------------------------------------------------
